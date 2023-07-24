@@ -4,21 +4,21 @@ import "./../styles/App.css";
 const App = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [isTrue, setIsTrue] = useState("");
+  const [isTrue, setIsTrue] = useState(true);
 
-  function check(){
-    if(name.trim() === ""){
+  function check() {
+    if (name.trim() === "") {
       setIsTrue(false);
-      return
+      return;
     }
-    
-    if(password === ""){
+
+    if (password === "") {
       setIsTrue(false);
+      return;
     } else {
       setIsTrue(true);
     }
-    
-   }
+  }
 
   return (
     <div>
@@ -40,9 +40,15 @@ const App = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        {isTrue ? "" : <p style={{color: "red"}}>Both username and password are required</p>}
-        <button type="submit" onClick={check}>Login</button>
+        <button type="submit" onClick={check}>
+          Login
+        </button>
       </form>
+      {isTrue ? (
+        ""
+      ) : (
+        <p style={{ color: "red" }}>Both username and password are required</p>
+      )}
     </div>
   );
 };
