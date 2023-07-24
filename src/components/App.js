@@ -7,7 +7,7 @@ const App = () => {
   const [isTrue, setIsTrue] = useState(false);
 
   function check(){
-    if(name.trim() !== "" && password !== "") {
+    if(name.trim() === "" && password === "") {
       setIsTrue(true);
     } else {
       setIsTrue(false);
