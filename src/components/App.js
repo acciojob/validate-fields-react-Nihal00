@@ -40,15 +40,17 @@ const App = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+        {isTrue ? (
+          ""
+        ) : (
+          <p id="errorMessage" style={{ color: "red" }}>
+            Both username and password are required
+          </p>
+        )}
         <button type="submit" onClick={check}>
           Login
         </button>
       </form>
-      {isTrue ? (
-        ""
-      ) : (
-        <p id="errorMessage" style={{ color: "red" }}>Both username and password are required</p>
-      )}
     </div>
   );
 };
