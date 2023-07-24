@@ -47,7 +47,7 @@ const App = () => {
       {isTrue ? (
         ""
       ) : (
-        <p style={{ color: "red" }}>Both username and password are required</p>
+        <p id="errorMessage" style={{ color: "red" }}>Both username and password are required</p>
       )}
     </div>
   );
