@@ -4,15 +4,21 @@ import "./../styles/App.css";
 const App = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [isTrue, setIsTrue] = useState(false);
+  const [isTrue, setIsTrue] = useState("");
 
   function check(){
-    if(name.trim() === "" && password === "") {
-      setIsTrue(true);
-    } else {
+    if(name.trim() === ""){
       setIsTrue(false);
+      return
     }
-  }
+    
+    if(password === ""){
+      setIsTrue(false);
+    } else {
+      setIsTrue(true);
+    }
+    
+   }
 
   return (
     <div>
