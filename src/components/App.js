@@ -4,19 +4,19 @@ import "./../styles/App.css";
 const App = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [isTrue, setIsTrue] = useState(true);
+  const [isTrue, setIsTrue] = useState("");
 
   function check() {
     if (name.trim() === "") {
-      setIsTrue(false);
+      setIsTrue(true);
       return;
     }
 
     if (password === "") {
-      setIsTrue(false);
+      setIsTrue(true);
       return;
     } else {
-      setIsTrue(true);
+      setIsTrue(false);
     }
   }
 
@@ -40,7 +40,7 @@ const App = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        {isTrue ? (
+        {!isTrue ? (
           ""
         ) : (
           <p id="errorMessage" style={{ color: "red" }}>
